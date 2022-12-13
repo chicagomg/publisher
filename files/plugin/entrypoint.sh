@@ -15,5 +15,6 @@ function error {
 }
 
 log "Works!"
-mkdir -p /__w/milk/milk/newhorizons
- 
+mkdir -p /hello
+cat $GITHUB_WORKSPACE/version > /outt.po
+
