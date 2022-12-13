@@ -1,8 +1,7 @@
 FROM ubuntu:20.04
 
 
+ADD files /
 
-ADD files/plugin /
 
-
-ENTRYPOINT ["/entrypoint.sh"] 
+ENTRYPOINT "/plugin/entrypoint.sh" 
