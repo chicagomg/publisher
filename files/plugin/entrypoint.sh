@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -eo pipefail
 
@@ -14,7 +14,9 @@ function error {
     printf "${RED}$(date +%T) [ERROR]${NC} $1\n"
 }
 
-log "Works!"
-mkdir -p /hello
-cat $GITHUB_WORKSPACE/version > /outt.po
-
+log "login to github registry"
+echo ${{ secrets.github_token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+log "build image"
+docker build -t ghcr.io/$GITHUB_REPOSITORY .
+log "push image to ghcr.io"
+docker push ghcr.io/$GITHUB_REPOSITORY

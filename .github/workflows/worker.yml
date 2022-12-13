@@ -14,15 +14,9 @@ jobs:
         password: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@main
-      - name: access
-        run: chmod +x test.sh
+      - name: give execution permition
+        run: chmod +x /plugin/entrypoint.sh
       - name: Run build script
-        run: test.sh
+        run: /plugin/entrypoint.sh
         shell: bash
-#        run: echo ${{ secrets.github_token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-#      - name: Build image
-#        run: |
-#          docker build -t ghcr.io/$GITHUB_REPOSITORY .
-#      - name: Push image 
-#        run: |
-#          docker push ghcr.io/$GITHUB_REPOSITORY
+
