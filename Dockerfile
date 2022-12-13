@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ghcr.io/chicagomg/docker-root-image:1.0
 
 
 ADD files /
