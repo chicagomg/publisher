@@ -1,0 +1,14 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  tag:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@main
+      - name: Docker login
+        run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.github_token }}
+
