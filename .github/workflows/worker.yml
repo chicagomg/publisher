@@ -8,7 +8,7 @@ jobs:
   create_image:
     runs-on: ubuntu-20.04
     container:
-      image: ghcr.io/chicagomg/bash:5
+      image: ghcr.io/chicagomg/docker-root-image:1.0
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
