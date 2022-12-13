@@ -14,8 +14,8 @@ jobs:
         password: ${{ secrets.github_token }}
     steps:
       - name: Run build script
-          run: ./test.sh
-          shell: bash
+        run: ./test.sh
+        shell: bash
 #        run: echo ${{ secrets.github_token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 #      - name: Build image
 #        run: |
