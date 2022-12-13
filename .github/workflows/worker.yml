@@ -11,8 +11,9 @@ jobs:
       - uses: actions/checkout@main
       - name: Docker login
         run: echo ${{ secrets.github_token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-      - name: show password
-        run: cat /home/runner/.docker/config.json
       - name: Build image
         run: |
-          ls -la
+          docker build -t ${{ GITHUB_REPOSITORY }} .
+      - name: Push image 
+        run: |
+          echo "The End"
