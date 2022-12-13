@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 
 
-ADD files/ /
+ADD files/plugin /
 
 
-ENTRYPOINT ["/plugin/entrypoint.sh"] 
+ENTRYPOINT ["/entrypoint.sh"] 
