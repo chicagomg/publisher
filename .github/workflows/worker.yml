@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@main
       - name: give execution permition
         run: |
+          ls /
+          cd /plugin
           ls
           pwd #chmod +x plugin/entrypoint.sh
       - name: Run build script
