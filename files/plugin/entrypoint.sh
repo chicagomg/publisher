@@ -15,5 +15,5 @@ function error {
 }
 
 log "Works!"
-mkdir newhorizons
+mkdir -p /__w/milk/milk/newhorizons
  
