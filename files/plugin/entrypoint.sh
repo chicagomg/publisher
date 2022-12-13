@@ -15,3 +15,5 @@ function error {
 }
 
 log "Works!"
+mkdir newhorizons
+ 
