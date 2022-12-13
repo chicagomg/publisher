@@ -13,7 +13,7 @@ jobs:
         run: echo ${{ secrets.github_token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - name: Build image
         run: |
-          docker build -t $GITHUB_REPOSITORY .
+          docker build -t ghcr.io/$GITHUB_REPOSITORY .
       - name: Push image 
         run: |
-          echo "The End"
+          docker push ghcr.io/$GITHUB_REPOSITORY
