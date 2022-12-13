@@ -14,6 +14,8 @@ jobs:
         password: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@main
+      - name: access
+        run: chmod +x test.sh
       - name: Run build script
         run: ./test.sh
         shell: bash
