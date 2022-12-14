@@ -15,7 +15,6 @@ function error {
 }
 
 log "login to github registry"
-echo ${{ secrets.github_token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 log "build image"
 docker build -t ghcr.io/$GITHUB_REPOSITORY .
 log "push image to ghcr.io"
